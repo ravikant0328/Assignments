@@ -51,7 +51,7 @@ class ViewController: UIViewController {
         /* Storing and printing operations with ignoring some exception cases */
         
         if displayScreen.text != "" && sender.titleLabel!.text != arithematicOperations.EquateTo.rawValue && sender.titleLabel!.text != arithematicOperations.Reset.rawValue && sender.titleLabel!.text != arithematicOperations.Decimal.rawValue && sender.titleLabel!.text != arithematicOperations.Unary.rawValue{
-            previousdisplayNumber = Double(displayScreen.text!)!
+            previousdisplayNumber = displayNumber
             dotCount = false
             displayScreen.text = sender.titleLabel!.text
             currentOperation = (sender.titleLabel!.text)!
