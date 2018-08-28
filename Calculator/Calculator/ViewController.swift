@@ -24,11 +24,27 @@ class ViewController: UIViewController {
         case Multiplication = "X"
         case Division = "/"
         case Percentage = "%"
-        case EquateTo = "="
-        case Reset = "AC"
-        case Decimal = "."
-        case Unary = "+/-"
     }
+    
+    func switchOperation(operation:String){
+        switch operation{
+        case "+":
+            displayScreen.text = String(previousdisplayNumber + displayNumber)
+        case "-":
+            displayScreen.text = String(previousdisplayNumber - displayNumber)
+        case "/":
+            displayScreen.text = String(previousdisplayNumber / displayNumber)
+        case "*":
+            displayScreen.text = String(previousdisplayNumber * displayNumber)
+        case "%":
+            displayScreen.text = String(previousdisplayNumber*100)
+        default :
+            print("0")
+        }
+        displayNumber = Double (displayScreen.text!)!
+    }
+    
+    
     
     /* Storing and printing numerals */
     
@@ -47,12 +63,9 @@ class ViewController: UIViewController {
     
     @IBAction func operations(_ sender: UIButton){
         
-        
-        
-        
         /* Storing and printing operations with ignoring some exception cases */
         
-        if (displayScreen.text != ""  && sender.titleLabel!.text != arithematicOperations.EquateTo.rawValue && sender.titleLabel!.text != arithematicOperations.Reset.rawValue && sender.titleLabel!.text != arithematicOperations.Decimal.rawValue && sender.titleLabel!.text != arithematicOperations.Unary.rawValue ) {
+        if (displayScreen.text != ""  && sender.titleLabel!.text != "=" && sender.titleLabel!.text != "AC" && sender.titleLabel!.text != "." && sender.titleLabel!.text != "+/-" ) {
             previousdisplayNumber = displayNumber
             dotCount = false
             displayScreen.text = sender.titleLabel!.text
@@ -60,32 +73,29 @@ class ViewController: UIViewController {
             doingOperation = true
             }
             
-        
-            
         /* Displaying the computed values */
             
-        else if sender.titleLabel!.text == arithematicOperations.EquateTo.rawValue{
+        else if sender.titleLabel!.text == "=" {
             if  currentOperation == arithematicOperations.Percentage.rawValue{
-                displayScreen.text = String(previousdisplayNumber*100)
+                switchOperation(operation:arithematicOperations.Percentage.rawValue)
             }
             else if  currentOperation == arithematicOperations.Division.rawValue{
-                displayScreen.text = String(previousdisplayNumber / displayNumber)
+                switchOperation(operation:arithematicOperations.Division.rawValue)
             }
             else if  currentOperation == arithematicOperations.Multiplication.rawValue{
-                displayScreen.text = String(previousdisplayNumber * displayNumber)
+                switchOperation(operation:arithematicOperations.Multiplication.rawValue)
             }
             else if  currentOperation == arithematicOperations.Subtraction.rawValue{
-                displayScreen.text = String(previousdisplayNumber - displayNumber)
+                switchOperation(operation:arithematicOperations.Subtraction.rawValue)
             }
             else if  currentOperation == arithematicOperations.Addition.rawValue{
-                displayScreen.text = String(previousdisplayNumber + displayNumber)
+                switchOperation(operation:arithematicOperations.Addition.rawValue)
             }
-            displayNumber = Double (displayScreen.text!)!
         }
             
         /* Resetting the Calculator */
             
-        else if sender.titleLabel!.text == arithematicOperations.Reset.rawValue{
+        else if sender.titleLabel!.text == "AC" {
             displayScreen.text = ""
             currentOperation = ""
             previousdisplayNumber = 0
@@ -95,7 +105,7 @@ class ViewController: UIViewController {
             
         /* Unary operations */
             
-        else if sender.titleLabel!.text == arithematicOperations.Unary.rawValue{
+        else if sender.titleLabel!.text == "+/-" {
             displayNumber = -displayNumber
             if displayScreen.text != "" && displayNumber != 0.0 && dotCount == false{                     //Non Decimal Unary operation
                 displayScreen.text = String(String(displayNumber).dropLast(2))
@@ -108,16 +118,16 @@ class ViewController: UIViewController {
             
         /* Decimal Operations */
             
-        else if sender.titleLabel!.text == arithematicOperations.Decimal.rawValue{
+        else if sender.titleLabel!.text == "." {
             if dotCount == false{
                 if displayScreen.text == currentOperation{
                     displayNumber = 0
                 }
-                displayNumber = displayNumber + 0.0
-                displayScreen.text = String(String(displayNumber).dropLast())
-                displayNumber = Double(displayScreen.text!)!
-                dotCount = true
-               }
+            displayNumber = displayNumber + 0.0
+            displayScreen.text = String(String(displayNumber).dropLast())
+            displayNumber = Double(displayScreen.text!)!
+            dotCount = true
+            }
         }
     }
     
