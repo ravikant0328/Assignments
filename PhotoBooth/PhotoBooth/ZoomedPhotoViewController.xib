@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZoomedPhotoViewController" customModule="PhotoBooth" customModuleProvider="target">
+            <connections>
+                <outlet property="imageViewBottomConstraint" destination="yKl-Re-cjA" id="fXL-ZH-QtR"/>
+                <outlet property="imageViewLeadingConstraint" destination="fib-uY-PYR" id="YuO-kE-XFH"/>
+                <outlet property="imageViewTopConstraint" destination="YhF-ff-9EG" id="Inn-Yw-5ip"/>
+                <outlet property="imageViewTrailingConstraint" destination="eNF-Ro-ge1" id="WiA-jy-0ce"/>
+                <outlet property="imageViewZoomed" destination="TpC-Lg-hHV" id="UOz-J3-YfD"/>
+                <outlet property="scrollView" destination="OzF-4W-TAQ" id="QhK-KE-gSB"/>
+                <outlet property="view" destination="iN0-l3-epB" id="nd9-KQ-hZY"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OzF-4W-TAQ">
+                    <rect key="frame" x="0.0" y="40" width="375" height="627"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TpC-Lg-hHV">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="627"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="595" id="Spo-bS-Y6C"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="TpC-Lg-hHV" firstAttribute="top" secondItem="OzF-4W-TAQ" secondAttribute="top" id="7AV-77-34T"/>
+                        <constraint firstAttribute="bottom" secondItem="TpC-Lg-hHV" secondAttribute="bottom" id="KfR-ML-tVn"/>
+                        <constraint firstItem="TpC-Lg-hHV" firstAttribute="leading" secondItem="OzF-4W-TAQ" secondAttribute="leading" id="Vww-od-Dig"/>
+                        <constraint firstAttribute="trailing" secondItem="TpC-Lg-hHV" secondAttribute="trailing" id="rJl-Qf-2yA"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="OzF-4W-TAQ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="YhF-ff-9EG"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="OzF-4W-TAQ" secondAttribute="trailing" id="eNF-Ro-ge1"/>
+                <constraint firstItem="OzF-4W-TAQ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="fib-uY-PYR"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="OzF-4W-TAQ" secondAttribute="bottom" id="yKl-Re-cjA"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="24.5" y="51.5"/>
+        </view>
+    </objects>
+</document>
