@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4133EC4521382AA80018A689 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4133EC4421382AA80018A689 /* MainViewController.swift */; };
+		41527B542138EB2A00091B20 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41527B522138EB2A00091B20 /* PhotoTableViewCell.swift */; };
+		41527B552138EB2A00091B20 /* PhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41527B532138EB2A00091B20 /* PhotoTableViewCell.xib */; };
 		4190A8EB213675D700B493BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4190A8EA213675D700B493BD /* AppDelegate.swift */; };
 		4190A8F0213675D700B493BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4190A8EE213675D700B493BD /* Main.storyboard */; };
 		4190A8F2213675D800B493BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4190A8F1213675D800B493BD /* Assets.xcassets */; };
@@ -17,9 +20,13 @@
 		4190A9122136B39900B493BD /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4190A9102136B39900B493BD /* PhotoCollectionViewCell.swift */; };
 		4190A9132136B39900B493BD /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4190A9112136B39900B493BD /* PhotoCollectionViewCell.xib */; };
 		4190A9152136C85400B493BD /* ZoomedPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4190A9142136C85400B493BD /* ZoomedPhotoViewController.xib */; };
+		4197716C2138283A00E5F417 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4197716B2138283A00E5F417 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4133EC4421382AA80018A689 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		41527B522138EB2A00091B20 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
+		41527B532138EB2A00091B20 /* PhotoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoTableViewCell.xib; sourceTree = "<group>"; };
 		4190A8E7213675D700B493BD /* PhotoBooth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoBooth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4190A8EA213675D700B493BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4190A8EF213675D700B493BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -32,6 +39,7 @@
 		4190A9102136B39900B493BD /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		4190A9112136B39900B493BD /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 		4190A9142136C85400B493BD /* ZoomedPhotoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZoomedPhotoViewController.xib; sourceTree = "<group>"; };
+		4197716B2138283A00E5F417 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,10 +73,13 @@
 			isa = PBXGroup;
 			children = (
 				4190A8EA213675D700B493BD /* AppDelegate.swift */,
+				4133EC4421382AA80018A689 /* MainViewController.swift */,
 				4190A8EE213675D700B493BD /* Main.storyboard */,
 				4190A8F1213675D800B493BD /* Assets.xcassets */,
 				4190A8F6213675D800B493BD /* Info.plist */,
 				4190A8F3213675D800B493BD /* LaunchScreen.storyboard */,
+				4190A8FF2136832600B493BD /* Thumbnailextension.swift */,
+				4197716D2138284000E5F417 /* Table */,
 				4190A907213683C700B493BD /* Zooming */,
 				4190A8FC2136772E00B493BD /* collection */,
 			);
@@ -81,7 +92,6 @@
 				4190A8FD2136778600B493BD /* CollectionViewController.swift */,
 				4190A9102136B39900B493BD /* PhotoCollectionViewCell.swift */,
 				4190A9112136B39900B493BD /* PhotoCollectionViewCell.xib */,
-				4190A8FF2136832600B493BD /* Thumbnailextension.swift */,
 			);
 			name = collection;
 			sourceTree = "<group>";
@@ -93,6 +103,16 @@
 				4190A908213683E800B493BD /* ZoomedPhotoViewController.swift */,
 			);
 			name = Zooming;
+			sourceTree = "<group>";
+		};
+		4197716D2138284000E5F417 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				4197716B2138283A00E5F417 /* TableViewController.swift */,
+				41527B522138EB2A00091B20 /* PhotoTableViewCell.swift */,
+				41527B532138EB2A00091B20 /* PhotoTableViewCell.xib */,
+			);
+			name = Table;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,6 +173,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41527B552138EB2A00091B20 /* PhotoTableViewCell.xib in Resources */,
 				4190A8F5213675D800B493BD /* LaunchScreen.storyboard in Resources */,
 				4190A9132136B39900B493BD /* PhotoCollectionViewCell.xib in Resources */,
 				4190A8F2213675D800B493BD /* Assets.xcassets in Resources */,
@@ -168,7 +189,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41527B542138EB2A00091B20 /* PhotoTableViewCell.swift in Sources */,
+				4133EC4521382AA80018A689 /* MainViewController.swift in Sources */,
 				4190A9002136832600B493BD /* Thumbnailextension.swift in Sources */,
+				4197716C2138283A00E5F417 /* TableViewController.swift in Sources */,
 				4190A9122136B39900B493BD /* PhotoCollectionViewCell.swift in Sources */,
 				4190A8FE2136778600B493BD /* CollectionViewController.swift in Sources */,
 				4190A909213683E800B493BD /* ZoomedPhotoViewController.swift in Sources */,
