@@ -15,8 +15,8 @@ class CollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.collectionView?.register(UINib.init(nibName: String(describing: PhotoCollectionViewCell.self), bundle: Bundle.main), forCellWithReuseIdentifier: "PhotoCell")
-       // self.collectionView?.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: "PhotoCell")
+        collectionView?.register(UINib.init(nibName: String(describing: PhotoCollectionViewCell.self), bundle: Bundle.main), forCellWithReuseIdentifier: "PhotoCell")
+        title = "Collection View"
     }
 
     private let reuseIdentifier = "PhotoCell"
@@ -58,7 +58,7 @@ extension CollectionViewController : UICollectionViewDelegateFlowLayout {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = ZoomedPhotoViewController()//nibName: "ZoomedPhotoViewController", bundle: nil)
         vc.photoName = photos[indexPath.row]
-        self.navigationController?.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: true)
 
     }
 

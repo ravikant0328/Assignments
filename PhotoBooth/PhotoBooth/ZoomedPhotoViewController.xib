@@ -12,12 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZoomedPhotoViewController" customModule="PhotoBooth" customModuleProvider="target">
             <connections>
-                <outlet property="imageViewBottomConstraint" destination="yKl-Re-cjA" id="fXL-ZH-QtR"/>
-                <outlet property="imageViewLeadingConstraint" destination="fib-uY-PYR" id="YuO-kE-XFH"/>
-                <outlet property="imageViewTopConstraint" destination="YhF-ff-9EG" id="Inn-Yw-5ip"/>
-                <outlet property="imageViewTrailingConstraint" destination="eNF-Ro-ge1" id="WiA-jy-0ce"/>
-                <outlet property="imageViewZoomed" destination="TpC-Lg-hHV" id="UOz-J3-YfD"/>
-                <outlet property="scrollView" destination="OzF-4W-TAQ" id="QhK-KE-gSB"/>
+                <outlet property="imageViewZoomed" destination="ZC4-r1-yla" id="9cC-ox-hQd"/>
+                <outlet property="scrollView" destination="0xG-yq-rNa" id="fBb-2S-jme"/>
                 <outlet property="view" destination="iN0-l3-epB" id="nd9-KQ-hZY"/>
             </connections>
         </placeholder>
@@ -26,33 +22,35 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OzF-4W-TAQ">
-                    <rect key="frame" x="0.0" y="40" width="375" height="627"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0xG-yq-rNa">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TpC-Lg-hHV">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="627"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="595" id="Spo-bS-Y6C"/>
-                            </constraints>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZC4-r1-yla">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         </imageView>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="TpC-Lg-hHV" firstAttribute="top" secondItem="OzF-4W-TAQ" secondAttribute="top" id="7AV-77-34T"/>
-                        <constraint firstAttribute="bottom" secondItem="TpC-Lg-hHV" secondAttribute="bottom" id="KfR-ML-tVn"/>
-                        <constraint firstItem="TpC-Lg-hHV" firstAttribute="leading" secondItem="OzF-4W-TAQ" secondAttribute="leading" id="Vww-od-Dig"/>
-                        <constraint firstAttribute="trailing" secondItem="TpC-Lg-hHV" secondAttribute="trailing" id="rJl-Qf-2yA"/>
+                        <constraint firstAttribute="trailing" secondItem="ZC4-r1-yla" secondAttribute="trailing" id="1Gr-RV-QM9"/>
+                        <constraint firstItem="ZC4-r1-yla" firstAttribute="height" secondItem="0xG-yq-rNa" secondAttribute="height" id="3kr-T4-h6m"/>
+                        <constraint firstItem="ZC4-r1-yla" firstAttribute="leading" secondItem="0xG-yq-rNa" secondAttribute="leading" id="D5c-bp-iU1"/>
+                        <constraint firstItem="ZC4-r1-yla" firstAttribute="top" secondItem="0xG-yq-rNa" secondAttribute="top" id="kBZ-Jy-h5c"/>
+                        <constraint firstAttribute="bottom" secondItem="ZC4-r1-yla" secondAttribute="bottom" id="tl8-dM-cI8"/>
+                        <constraint firstItem="ZC4-r1-yla" firstAttribute="width" secondItem="0xG-yq-rNa" secondAttribute="width" priority="250" id="tuK-tR-QKQ"/>
                     </constraints>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="GGt-Zv-rXO"/>
+                    </connections>
                 </scrollView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="OzF-4W-TAQ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="YhF-ff-9EG"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="OzF-4W-TAQ" secondAttribute="trailing" id="eNF-Ro-ge1"/>
-                <constraint firstItem="OzF-4W-TAQ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="fib-uY-PYR"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="OzF-4W-TAQ" secondAttribute="bottom" id="yKl-Re-cjA"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="0xG-yq-rNa" secondAttribute="bottom" id="6DL-hN-AxV"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="0xG-yq-rNa" secondAttribute="trailing" id="FmT-aO-Nzt"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="top" secondItem="0xG-yq-rNa" secondAttribute="top" constant="20" id="Rgl-ZZ-cdY"/>
+                <constraint firstItem="0xG-yq-rNa" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Zjx-Oe-70q"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="24.5" y="51.5"/>
+            <point key="canvasLocation" x="-146.5" y="52.5"/>
         </view>
     </objects>
 </document>

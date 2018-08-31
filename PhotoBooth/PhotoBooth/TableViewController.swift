@@ -13,7 +13,8 @@ class TableViewController: UITableViewController {
     @IBOutlet var phototableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView?.register(UINib.init(nibName: String(describing: PhotoTableViewCell.self), bundle: Bundle.main), forCellReuseIdentifier: "TableCell")
+        tableView?.register(UINib.init(nibName: String(describing: PhotoTableViewCell.self), bundle: Bundle.main), forCellReuseIdentifier: "TableCell")
+        title = "Table View"
     }
     
     private let reuseIdentifier = "TableCell"
@@ -67,7 +68,7 @@ extension TableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = ZoomedPhotoViewController()//nibName: "ZoomedPhotoViewController", bundle: nil)
         vc.photoName = photos[indexPath.row]
-        self.navigationController?.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
