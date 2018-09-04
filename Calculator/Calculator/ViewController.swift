@@ -34,7 +34,7 @@ class ViewController: UIViewController {
             displayScreen.text = String(previousdisplayNumber - displayNumber)
         case "/":
             displayScreen.text = String(previousdisplayNumber / displayNumber)
-        case "*":
+        case "X":
             displayScreen.text = String(previousdisplayNumber * displayNumber)
         case "%":
             displayScreen.text = String(previousdisplayNumber*100)
@@ -71,9 +71,9 @@ class ViewController: UIViewController {
             displayScreen.text = sender.titleLabel!.text
             currentOperation = (sender.titleLabel!.text)!
             doingOperation = true
-            }
+        }
             
-        /* Displaying the computed values */
+        /* Calculating & Displaying the computed values */
             
         else if sender.titleLabel!.text == "=" {
             if  currentOperation == arithematicOperations.Percentage.rawValue{
