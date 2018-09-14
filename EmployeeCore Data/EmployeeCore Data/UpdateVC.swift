@@ -83,6 +83,13 @@ class UpdateVC:UIViewController,UITextFieldDelegate{
     
     @IBAction func onClickUpdate(_ sender: Any) {
         let id = idLabelField.text
+        if(nametextField.text == "" || addressTextField.text == "")
+        {
+            let alert = UIAlertController(title: "Alert",message: "None of the fields should be left blank",preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present( alert , animated: true)
+            return
+        }
         update(id:id!)
         
     }

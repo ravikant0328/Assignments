@@ -14,8 +14,7 @@ class DepartmentData {
     
     static let dept = DepartmentData()
     
-    func addDept(dept:[String:String])
-    {
+    func addDept(dept:[String:String]){
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.insertNewObject(forEntityName: "Department", into : context) as! Department

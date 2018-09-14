@@ -32,6 +32,7 @@ class ViewController: UIViewController , UISearchBarDelegate{
         }
     }
     
+    
     var id: [String] = []
     var names: [String] = []
     
@@ -109,6 +110,7 @@ class ViewController: UIViewController , UISearchBarDelegate{
         search(name: searchBar.text!)
         self.listTableView.reloadData()
     }
+    
     
 }
 
